@@ -11,7 +11,9 @@ The standard Lama Remover (iopaint) seems to assume the use of a Web UI. This ca
 ----
 
 ```python
+from PIL import Image
 from lamarem import LaMaRemover
+
 image_path = "image1.png"
 mask_path = "image2.png"
 
