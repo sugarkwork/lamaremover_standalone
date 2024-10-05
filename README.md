@@ -7,3 +7,18 @@
 This code is designed to allow calling LamaRemover (now known as iopaint) from within Python code as simply as possible.
 
 The standard Lama Remover (iopaint) seems to assume the use of a Web UI. This can be somewhat inconvenient when you want to perform automated processing programmatically.
+
+----
+
+```python
+from lamarem import LaMaRemover
+image_path = "image1.png"
+mask_path = "image2.png"
+
+remover = LaMaRemover()
+image = Image.open(image_path).convert("RGB")
+mask = Image.open(mask_path).convert("L")
+
+output_image = remover(image, mask)
+output_image.save("output.png")
+```
